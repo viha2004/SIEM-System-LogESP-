@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | {% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h1>Welcome to LogESP</h1>
+    <p class="version">Version {{ version }}</p>
+
+    <div class="cards">
+        <a href="{% url 'hwam:index' %}" class="card">
+            <h2>Asset Management</h2>
+            <p>Manage and monitor hardware/software assets.</p>
+        </a>
+
+        <a href="{% url 'risk:index' %}" class="card">
+            <h2>Risk Management</h2>
+            <p>Identify, assess, and manage risks effectively.</p>
+        </a>
+
+        <a href="{% url 'siem:index' %}" class="card">
+            <h2>SIEM</h2>
+            <p>Security Information and Event Monitoring platform.</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log List</title>
+</head>
+<body>
+    <h1 style="color: #34495e;">Log List (with Threat Scores)</h1>
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #ecf0f1; color: #2c3e50;">
+            <th style="padding: 8px; border: 1px solid #ccc;">Timestamp</th>
+            <th style="padding: 8px; border: 1px solid #ccc;">Source</th>
+            <th style="padding: 8px; border: 1px solid #ccc;">Event Type</th>
+            <th style="padding: 8px; border: 1px solid #ccc;">Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for log in logs %}
+            <tr {% if log.is_threat %}style="background-color: #ffe6e6; color: #e74c3c;"{% endif %}>
+              <td style="padding: 8px; border: 1px solid #ccc;">{{ log.timestamp }}</td>
+              <td style="padding: 8px; border: 1px solid #ccc;">{{ log.source }}</td>
+              <td style="padding: 8px; border: 1px solid #ccc;">{{ log.event_type }}</td>
+              <td style="padding: 8px; border: 1px solid #ccc;">{{ log.message }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>      
+</body>
+</html>

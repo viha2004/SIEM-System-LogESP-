@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1 style="color: #34495e;">SIEM Dashboard</h1>
+
+    <div style="background-color: #ecf0f1; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h2 style="color: #2c3e50;">Welcome, {{ user.username }}!</h2>
+        <p style="color: #2c3e50;">Here is a summary of recent events and alerts.</p>
+    </div>
+
+    <a href="{% url 'log_list' %}" style="background-color: #2980b9; color: white; padding: 10px 15px; border-radius: 4px; text-decoration: none;">View Logs with AI Threat Detection</a>
+
+    <div style="background-color: #ecf0f1; padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <h3 style="color: #2c3e50;">Sample Stats</h3>
+        <ul style="color: #2c3e50;">
+            <li>Total Logs: 1,234</li>
+            <li>Active Alerts: 12</li>
+            <li>Users: 5</li>
+        </ul>
+    </div>
+{% endblock %}
